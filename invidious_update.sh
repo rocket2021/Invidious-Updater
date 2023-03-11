@@ -987,7 +987,7 @@ docker_repo_chk() {
 
         cd $USER_DIR || exit 1
 
-        git clone https://github.com/iv-org/invidious
+        git clone https://github.com/rocket2021/invidious
 
         repoexit
         # Checkout
