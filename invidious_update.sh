@@ -11,7 +11,7 @@
 ####                   Maintained by @tmiland                     ####
 ######################################################################
 
-VERSION='2.1.2' # Must stay on line 14 for updater to fetch the numbers
+VERSION='2.1.3' # Must stay on line 14 for updater to fetch the numbers
 
 #------------------------------------------------------------------------------#
 #
@@ -1147,8 +1147,9 @@ fi
 rebuild() {
   printf "\n-- Rebuilding ${REPO_DIR}\n"
   repoexit
-  shards install --production
-  crystal build src/invidious.cr --release -Ddisable_quic
+  # shards install --production
+  # crystal build src/invidious.cr --release -Ddisable_quic
+  sudo -i -u invidious make -C ${REPO_DIR}
   #sudo chown -R 1000:$USER_NAME $USER_DIR
   cd - || exit
   printf "\n"
